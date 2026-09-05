@@ -1,1192 +1,2513 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>For Yash ♡</title>
-
-  <!-- Romantic fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
-
-  <style>
-
-    /* =========================
-       BASIC
-    ========================= */
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background:
-        radial-gradient(circle at 10% 10%, #ffe5ef 0%, transparent 30%),
-        radial-gradient(circle at 90% 30%, #ffd6e5 0%, transparent 30%),
-        #fff8fa;
-
-      color: #633d4a;
-      font-family: "DM Sans", sans-serif;
-
-      overflow-x: hidden;
-    }
-
-    /* =========================
-       FLOATING PETALS
-    ========================= */
-
-    .petal {
-      position: fixed;
-      top: -30px;
-      z-index: 20;
-      pointer-events: none;
-
-      font-size: 18px;
-
-      animation:
-        falling linear infinite;
-
-      opacity: 0.7;
-    }
-
-    @keyframes falling {
-
-      0% {
-        transform:
-          translateY(-50px)
-          translateX(0)
-          rotate(0deg);
-
-        opacity: 0;
-      }
-
-      15% {
-        opacity: .8;
-      }
-
-      100% {
-        transform:
-          translateY(110vh)
-          translateX(100px)
-          rotate(360deg);
-
-        opacity: 0;
-      }
-    }
-
-    /* =========================
-       HERO
-    ========================= */
-
-    .hero {
-
-      min-height: 100vh;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      padding: 60px 25px;
-
-      position: relative;
-    }
-
-    .hero-content {
-
-      text-align: center;
-
-      max-width: 850px;
-
-      position: relative;
-
-      z-index: 3;
-    }
-
-    .small-text {
-
-      text-transform: uppercase;
-
-      letter-spacing: 5px;
-
-      font-size: 12px;
-
-      color: #b56b83;
-
-      margin-bottom: 25px;
-    }
-
-    .hero h1 {
-
-      font-family: "Great Vibes", cursive;
-
-      font-size: clamp(80px, 14vw, 150px);
-
-      font-weight: 400;
-
-      color: #c9577c;
-
-      line-height: .9;
-
-      text-shadow:
-        0 10px 25px rgba(180, 70, 105, .15);
-    }
-
-    .hero h2 {
-
-      margin-top: 25px;
-
-      font-size: clamp(20px, 3vw, 30px);
-
-      font-weight: 500;
-
-      color: #734454;
-    }
-
-    .hero-description {
-
-      max-width: 600px;
-
-      margin: 30px auto;
-
-      font-size: 17px;
-
-      line-height: 1.9;
-
-      color: #8c6470;
-    }
-
-    /* =========================
-       3D HEART
-    ========================= */
-
-    .heart-3d {
-
-      width: 80px;
-      height: 80px;
-
-      margin: 35px auto;
-
-      position: relative;
-
-      transform:
-        rotate(-45deg)
-        perspective(500px);
-
-      animation:
-        heartFloat 3s ease-in-out infinite;
-
-      filter:
-        drop-shadow(0 20px 20px rgba(200, 75, 115, .25));
-    }
-
-    .heart-3d::before,
-    .heart-3d::after {
-
-      content: "";
-
-      position: absolute;
-
-      width: 80px;
-      height: 80px;
-
-      border-radius: 50%;
-
-      background:
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>S ♥ Y — For Yash</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Mono:wght@300;400;500&family=Great+Vibes&family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --pink:#efc4ca;
+    --pink-dark:#a85f6a;
+    --wine:#653943;
+    --cream:#fff8f0;
+    --paper:rgba(255,248,240,.88);
+    --brown:#765d55;
+    --sage:#a9b39d;
+    --butter:#efe1aa;
+    --ink:#34292c;
+    --line:rgba(101,57,67,.14);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    color:var(--ink);
+    background:#f8eee5;
+    font-family:"Manrope",sans-serif;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:-50%;
+    width:200%;
+    height:200%;
+    pointer-events:none;
+    z-index:9999;
+    opacity:.03;
+
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+img{
+    display:block;
+    width:100%;
+}
+
+::selection{
+    background:var(--pink-dark);
+    color:white;
+}
+
+
+/* =====================================================
+   CURSOR
+===================================================== */
+
+.cursor{
+    position:fixed;
+    left:0;
+    top:0;
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:var(--pink-dark);
+    transform:translate(-50%,-50%);
+    pointer-events:none;
+    z-index:10000;
+    transition:.3s ease;
+}
+
+.cursor::after{
+    content:"";
+    position:absolute;
+    inset:-7px;
+    border:1px solid rgba(168,95,106,.4);
+    border-radius:50%;
+}
+
+.cursor.hover{
+    width:48px;
+    height:48px;
+    background:var(--pink);
+}
+
+.cursor-label{
+    position:fixed;
+    left:0;
+    top:0;
+    z-index:10001;
+    pointer-events:none;
+    transform:translate(-50%,-50%);
+    color:var(--wine);
+    font:8px "DM Mono",monospace;
+    letter-spacing:.12em;
+    opacity:0;
+    transition:.2s ease;
+}
+
+.cursor-label.show{
+    opacity:1;
+}
+
+
+/* =====================================================
+   NAV
+===================================================== */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:20px 5vw;
+    z-index:900;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:rgba(255,248,240,.72);
+    backdrop-filter:blur(16px);
+
+    border-bottom:1px solid rgba(101,57,67,.06);
+}
+
+.logo{
+    font:500 15px "DM Mono",monospace;
+    letter-spacing:.08em;
+    color:var(--wine);
+}
+
+.nav-links{
+    display:flex;
+    gap:27px;
+}
+
+.nav-links a{
+    color:var(--brown);
+    font:400 8px "DM Mono",monospace;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    transition:.25s ease;
+}
+
+.nav-links a:hover{
+    color:var(--pink-dark);
+}
+
+
+/* =====================================================
+   GENERAL
+===================================================== */
+
+.reveal{
+    opacity:0;
+    transform:translateY(45px);
+
+    transition:
+        opacity .9s ease,
+        transform 1s cubic-bezier(.16,1,.3,1);
+}
+
+.reveal.visible{
+    opacity:1;
+    transform:none;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+    min-height:100svh;
+
+    padding:140px 7vw 70px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+    overflow:hidden;
+
+    background:
         linear-gradient(
-          135deg,
-          #ffb5cc,
-          #e96d97
-        );
-    }
+            rgba(95,47,56,.18),
+            rgba(95,47,56,.28)
+        ),
+        url("https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=2200&q=90")
+        center/cover no-repeat;
+}
 
-    .heart-3d::before {
-      top: -40px;
-      left: 0;
-    }
+.hero-inner{
+    width:min(980px,100%);
+    text-align:center;
+    position:relative;
+    z-index:2;
+}
 
-    .heart-3d::after {
-      left: 40px;
-      top: 0;
-    }
+.hero-card{
 
-    @keyframes heartFloat {
+    display:inline-block;
 
-      0%,100% {
-        transform:
-          rotate(-45deg)
-          translateY(0);
-      }
+    padding:
+        48px 55px 50px;
 
-      50% {
-        transform:
-          rotate(-45deg)
-          translateY(-12px);
-      }
-    }
+    background:
+        rgba(255,248,240,.9);
 
-    /* =========================
-       BUTTON
-    ========================= */
+    backdrop-filter:blur(10px);
 
-    .button {
+    box-shadow:
+        0 30px 80px
+        rgba(70,38,43,.15);
 
-      display: inline-block;
+    transform:rotate(-.5deg);
+}
 
-      padding: 15px 30px;
+.hero-kicker{
+    color:var(--pink-dark);
+    font:400 9px "DM Mono",monospace;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+}
 
-      border-radius: 50px;
+.hero-name{
 
-      background:
+    margin-top:23px;
+
+    color:var(--wine);
+
+    font:
+        clamp(4.5rem,11vw,10rem)
+        "Great Vibes",
+        cursive;
+
+    line-height:.88;
+}
+
+.hero-title{
+
+    margin-top:12px;
+
+    color:var(--ink);
+
+    font:
+        clamp(2.7rem,6vw,6.1rem)
+        "Playfair Display",
+        serif;
+
+    line-height:.94;
+}
+
+.hero-title span{
+    color:var(--pink-dark);
+}
+
+.hero-text{
+
+    max-width:620px;
+
+    margin:27px auto 0;
+
+    color:var(--brown);
+
+    font-size:14px;
+
+    line-height:1.9;
+}
+
+.hero-button{
+
+    display:inline-flex;
+
+    margin-top:31px;
+
+    padding:14px 23px;
+
+    border:1px solid var(--wine);
+
+    border-radius:100px;
+
+    color:var(--wine);
+
+    font-size:10px;
+
+    transition:.35s ease;
+}
+
+.hero-button:hover{
+
+    background:var(--wine);
+
+    color:var(--cream);
+
+    transform:translateY(-4px);
+}
+
+
+/* =====================================================
+   SOFT QUOTE
+===================================================== */
+
+.quote{
+
+    min-height:82vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:120px 7vw;
+
+    position:relative;
+
+    background:
         linear-gradient(
-          135deg,
-          #ef91ad,
-          #d96489
-        );
+            rgba(255,248,240,.62),
+            rgba(255,248,240,.78)
+        ),
+        url("https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=2200&q=90")
+        center/cover no-repeat;
+}
 
-      color: white;
+.quote-card{
 
-      text-decoration: none;
+    width:min(870px,100%);
 
-      font-size: 14px;
+    padding:65px;
 
-      box-shadow:
-        0 15px 30px rgba(211, 89, 126, .25);
+    text-align:center;
 
-      transition: .3s;
-    }
+    background:rgba(255,248,240,.92);
 
-    .button:hover {
+    backdrop-filter:blur(9px);
 
-      transform:
-        translateY(-5px)
-        scale(1.03);
+    box-shadow:
+        0 25px 65px
+        rgba(101,57,67,.1);
+}
 
-      box-shadow:
-        0 20px 35px rgba(211, 89, 126, .35);
-    }
+.quote-small{
 
-    /* =========================
-       IMAGE
-    ========================= */
+    color:var(--pink-dark);
 
-    .photo {
+    font:400 9px "DM Mono",monospace;
 
-      width: 100%;
+    letter-spacing:.17em;
 
-      height: 500px;
+    text-transform:uppercase;
+}
 
-      object-fit: cover;
+.quote-card h2{
 
-      border-radius: 25px;
+    margin-top:22px;
 
-      box-shadow:
-        0 30px 70px rgba(112, 52, 73, .18);
+    color:var(--wine);
 
-      transition: transform .6s ease;
-    }
+    font:
+        clamp(2.8rem,6vw,6rem)
+        "Playfair Display",
+        serif;
 
-    .photo:hover {
+    line-height:.88;
+}
 
-      transform:
-        scale(1.025);
-    }
+.quote-card h2 span{
 
-    /* =========================
-       SECTIONS
-    ========================= */
+    display:block;
 
-    section.story {
+    color:var(--pink-dark);
 
-      width: min(1100px, 90%);
+    margin-top:7px;
 
-      margin: 150px auto;
+    font:
+        400 clamp(3rem,6vw,6rem)
+        "Great Vibes",
+        cursive;
+}
 
-      position: relative;
-    }
+.quote-card p{
 
-    .section-number {
+    margin-top:28px;
 
-      font-size: 12px;
+    color:var(--brown);
 
-      letter-spacing: 4px;
+    font:
+        18px/1.8
+        "Cormorant Garamond",
+        serif;
+}
 
-      text-transform: uppercase;
 
-      color: #c47a91;
+/* =====================================================
+   STORY
+===================================================== */
 
-      margin-bottom: 20px;
-    }
+.story{
 
-    .story h2 {
+    min-height:100svh;
 
-      font-family: "Great Vibes", cursive;
+    padding:140px 7vw;
 
-      font-weight: 400;
+    display:flex;
+    align-items:center;
 
-      font-size: clamp(50px, 7vw, 85px);
+    position:relative;
 
-      color: #bd5879;
-
-      line-height: 1;
-
-      margin-bottom: 30px;
-    }
-
-    .story p {
-
-      font-size: 17px;
-
-      line-height: 2;
-
-      color: #755762;
-
-      margin-bottom: 20px;
-    }
-
-    /* =========================
-       SPLIT SECTIONS
-    ========================= */
-
-    .split {
-
-      display: grid;
-
-      grid-template-columns:
-        1fr 1fr;
-
-      gap: 70px;
-
-      align-items: center;
-    }
-
-    .split.reverse {
-
-      direction: rtl;
-    }
-
-    .split.reverse > * {
-
-      direction: ltr;
-    }
-
-    /* =========================
-       3D CARD
-    ========================= */
-
-    .memory-card {
-
-      background:
-        rgba(255,255,255,.65);
-
-      backdrop-filter:
-        blur(15px);
-
-      border:
-        1px solid rgba(255,255,255,.8);
-
-      border-radius: 30px;
-
-      padding: 45px;
-
-      box-shadow:
-        0 30px 80px rgba(120, 57, 78, .12);
-
-      transition:
-        transform .15s ease;
-
-      transform-style: preserve-3d;
-    }
-
-    .memory-card h3 {
-
-      font-family: "Great Vibes", cursive;
-
-      font-size: 48px;
-
-      font-weight: 400;
-
-      color: #c25d7d;
-
-      margin-bottom: 20px;
-    }
-
-    /* =========================
-       QUOTE
-    ========================= */
-
-    .quote-section {
-
-      min-height: 70vh;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      text-align: center;
-
-      padding: 80px 25px;
-
-      position: relative;
-    }
-
-    .quote {
-
-      max-width: 850px;
-    }
-
-    .quote span {
-
-      font-size: 70px;
-
-      color: #e889a6;
-    }
-
-    .quote h2 {
-
-      font-family: "Great Vibes", cursive;
-
-      font-weight: 400;
-
-      font-size: clamp(50px, 8vw, 95px);
-
-      color: #c35679;
-
-      line-height: 1.1;
-    }
-
-    .quote p {
-
-      margin-top: 25px;
-
-      font-size: 16px;
-
-      color: #85636d;
-    }
-
-    /* =========================
-       REASONS
-    ========================= */
-
-    .reasons {
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(3, 1fr);
-
-      gap: 20px;
-    }
-
-    .reason {
-
-      padding: 35px 25px;
-
-      background:
+    background:
         linear-gradient(
-          145deg,
-          #fff,
-          #ffe8ef
+            90deg,
+            rgba(53,35,39,.2),
+            rgba(53,35,39,.42)
+        ),
+        url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=2200&q=90")
+        center/cover no-repeat;
+}
+
+.story-grid{
+
+    width:min(1150px,100%);
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap:8vw;
+
+    align-items:center;
+}
+
+.story-paper{
+
+    padding:48px;
+
+    background:
+        rgba(255,248,240,.92);
+
+    backdrop-filter:blur(9px);
+
+    box-shadow:
+        0 30px 70px
+        rgba(30,20,22,.15);
+
+    transform:rotate(-1deg);
+}
+
+.story-label{
+
+    color:var(--pink-dark);
+
+    font:
+        400 9px
+        "DM Mono",
+        monospace;
+
+    letter-spacing:.16em;
+
+    text-transform:uppercase;
+}
+
+.story-paper h2{
+
+    margin-top:20px;
+
+    color:var(--wine);
+
+    font:
+        clamp(3rem,5vw,5.5rem)
+        "Playfair Display",
+        serif;
+
+    line-height:.88;
+}
+
+.story-paper h2 span{
+
+    color:var(--pink-dark);
+
+    font:
+        400
+        clamp(3rem,5vw,5.5rem)
+        "Great Vibes",
+        cursive;
+}
+
+.story-paper p{
+
+    margin-top:25px;
+
+    color:var(--brown);
+
+    font-size:14px;
+
+    line-height:1.9;
+}
+
+.story-side{
+
+    color:white;
+
+    text-shadow:
+        0 3px 22px
+        rgba(0,0,0,.42);
+}
+
+.story-side small{
+
+    color:var(--butter);
+
+    font:
+        400 9px
+        "DM Mono",
+        monospace;
+
+    letter-spacing:.16em;
+
+    text-transform:uppercase;
+}
+
+.story-side h3{
+
+    margin-top:20px;
+
+    font:
+        clamp(3.5rem,7vw,7rem)
+        "Playfair Display",
+        serif;
+
+    line-height:.84;
+}
+
+.story-side h3 span{
+
+    display:block;
+
+    color:var(--pink);
+
+    font:
+        400
+        clamp(3.5rem,7vw,7rem)
+        "Great Vibes",
+        cursive;
+}
+
+.story-side p{
+
+    max-width:480px;
+
+    margin-top:27px;
+
+    color:
+        rgba(255,248,240,.87);
+
+    font-size:14px;
+
+    line-height:1.85;
+}
+
+
+/* =====================================================
+   DISTANCE
+===================================================== */
+
+.distance{
+
+    min-height:88vh;
+
+    padding:150px 7vw;
+
+    display:flex;
+    align-items:center;
+
+    position:relative;
+
+    color:var(--cream);
+
+    background:
+        linear-gradient(
+            rgba(98,46,56,.83),
+            rgba(98,46,56,.9)
+        ),
+        url("https://images.unsplash.com/photo-1494336934272-f21c6ea8f1e6?auto=format&fit=crop&w=2200&q=90")
+        center/cover no-repeat;
+}
+
+.distance-inner{
+
+    width:min(1050px,100%);
+
+    margin:auto;
+}
+
+.distance-label{
+
+    color:var(--butter);
+
+    font:
+        400 9px
+        "DM Mono",
+        monospace;
+
+    letter-spacing:.17em;
+
+    text-transform:uppercase;
+}
+
+.distance h2{
+
+    margin-top:25px;
+
+    font:
+        clamp(3.3rem,7vw,7.4rem)
+        "Playfair Display",
+        serif;
+
+    line-height:.86;
+}
+
+.distance h2 span{
+
+    display:block;
+
+    color:var(--pink);
+
+    margin-top:5px;
+
+    font:
+        400
+        clamp(3.3rem,7vw,7.4rem)
+        "Great Vibes",
+        cursive;
+}
+
+.route{
+
+    margin-top:100px;
+
+    display:grid;
+
+    grid-template-columns:
+        auto
+        1fr
+        auto;
+
+    gap:25px;
+
+    align-items:center;
+}
+
+.route-name{
+
+    font:
+        500 10px
+        "DM Mono",
+        monospace;
+
+    letter-spacing:.1em;
+
+    text-transform:uppercase;
+}
+
+.route-line{
+
+    height:1px;
+
+    position:relative;
+
+    background:
+        rgba(255,255,255,.25);
+}
+
+.route-line::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        repeating-linear-gradient(
+            to right,
+            var(--pink) 0 7px,
+            transparent 7px 15px
         );
+}
 
-      border-radius: 25px;
+.route-heart{
 
-      box-shadow:
-        0 20px 50px rgba(116, 54, 76, .09);
+    position:absolute;
 
-      transition: .35s;
+    left:50%;
+    top:50%;
 
-      border:
-        1px solid rgba(255,255,255,.8);
+    transform:
+        translate(-50%,-50%);
+
+    width:54px;
+    height:54px;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+
+    background:var(--pink);
+
+    color:var(--wine);
+
+    animation:heartbeat 2s infinite;
+}
+
+@keyframes heartbeat{
+
+    50%{
+        transform:
+            translate(-50%,-50%)
+            scale(1.12);
     }
 
-    .reason:hover {
+}
 
-      transform:
+.distance-text{
+
+    margin-top:58px;
+
+    max-width:660px;
+
+    color:
+        rgba(255,250,243,.72);
+
+    font:
+        400 11px/1.9
+        "DM Mono",
+        monospace;
+}
+
+
+/* =====================================================
+   LOVE NOTES
+===================================================== */
+
+.notes{
+
+    padding:155px 7vw;
+
+    background:
+        linear-gradient(
+            rgba(255,248,240,.63),
+            rgba(255,248,240,.82)
+        ),
+        url("https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=2200&q=90")
+        center/cover fixed;
+}
+
+.notes-title{
+
+    text-align:center;
+
+    color:var(--wine);
+
+    font:
+        clamp(3rem,6vw,6.5rem)
+        "Playfair Display",
+        serif;
+
+    line-height:.88;
+}
+
+.notes-title span{
+
+    color:var(--pink-dark);
+
+    font:
+        400
+        clamp(3rem,6vw,6.5rem)
+        "Great Vibes",
+        cursive;
+}
+
+.notes-grid{
+
+    width:min(1080px,100%);
+
+    margin:90px auto 0;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:22px;
+}
+
+.note{
+
+    min-height:310px;
+
+    padding:34px;
+
+    background:
+        rgba(255,250,244,.93);
+
+    box-shadow:
+        0 18px 42px
+        rgba(103,57,66,.09);
+
+    transition:.45s ease;
+}
+
+.note:nth-child(1){
+    transform:rotate(-2deg);
+}
+
+.note:nth-child(2){
+    transform:
+        translateY(32px)
+        rotate(1.4deg);
+}
+
+.note:nth-child(3){
+    transform:rotate(-1deg);
+}
+
+.note:hover{
+
+    transform:
         translateY(-10px)
-        rotateX(4deg);
+        rotate(0);
+}
 
-      box-shadow:
-        0 30px 60px rgba(116, 54, 76, .15);
+.note-symbol{
+
+    font-size:30px;
+
+    color:var(--pink-dark);
+}
+
+.note h3{
+
+    margin-top:50px;
+
+    font:
+        31px
+        "Cormorant Garamond",
+        serif;
+
+    color:var(--wine);
+}
+
+.note p{
+
+    margin-top:13px;
+
+    color:var(--brown);
+
+    font-size:13px;
+
+    line-height:1.8;
+}
+
+
+/* =====================================================
+   LETTER
+===================================================== */
+
+.letter-section{
+
+    min-height:100svh;
+
+    padding:150px 7vw;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:
+        linear-gradient(
+            rgba(255,248,240,.55),
+            rgba(255,248,240,.74)
+        ),
+        url("https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=2200&q=90")
+        center/cover no-repeat;
+}
+
+.letter{
+
+    width:min(900px,100%);
+
+    padding:68px;
+
+    background:
+        rgba(255,250,244,.96);
+
+    box-shadow:
+        0 32px 80px
+        rgba(103,57,66,.13);
+
+    position:relative;
+
+    transform:rotate(.35deg);
+}
+
+.letter::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:15px;
+
+    border:
+        1px dashed
+        rgba(170,98,110,.26);
+
+    pointer-events:none;
+}
+
+.letter-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    color:var(--pink-dark);
+
+    font:
+        400 8px
+        "DM Mono",
+        monospace;
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
+}
+
+.letter h2{
+
+    margin-top:55px;
+
+    color:var(--wine);
+
+    font:
+        clamp(3rem,5vw,5.3rem)
+        "Playfair Display",
+        serif;
+}
+
+.letter h2 span{
+
+    color:var(--pink-dark);
+
+    font:
+        400
+        clamp(3rem,5vw,5.3rem)
+        "Great Vibes",
+        cursive;
+}
+
+.letter p{
+
+    margin-top:28px;
+
+    color:var(--brown);
+
+    font:
+        18px/1.95
+        "Cormorant Garamond",
+        serif;
+}
+
+.signature{
+
+    margin-top:45px;
+
+    color:var(--wine);
+
+    font:
+        46px
+        "Great Vibes",
+        cursive;
+}
+
+
+/* =====================================================
+   FINAL
+===================================================== */
+
+.final{
+
+    min-height:100svh;
+
+    padding:120px 7vw;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    background:
+        linear-gradient(
+            rgba(103,57,66,.25),
+            rgba(103,57,66,.4)
+        ),
+        url("https://images.unsplash.com/photo-1494336934272-f21c6ea8f1e6?auto=format&fit=crop&w=2200&q=90")
+        center/cover no-repeat;
+}
+
+.final-inner{
+
+    width:min(920px,100%);
+
+    padding:65px 45px;
+
+    background:
+        rgba(255,250,244,.91);
+
+    box-shadow:
+        0 30px 80px
+        rgba(40,20,24,.18);
+}
+
+.final-small{
+
+    color:var(--pink-dark);
+
+    font:
+        400 9px
+        "DM Mono",
+        monospace;
+
+    letter-spacing:.17em;
+
+    text-transform:uppercase;
+}
+
+.final h2{
+
+    margin-top:27px;
+
+    color:var(--wine);
+
+    font:
+        clamp(3.3rem,7vw,7.3rem)
+        "Playfair Display",
+        serif;
+
+    line-height:.86;
+}
+
+.final h2 em{
+
+    display:block;
+
+    margin-top:7px;
+
+    color:var(--pink-dark);
+
+    font:
+        400
+        clamp(3.3rem,7vw,7.3rem)
+        "Great Vibes",
+        cursive;
+}
+
+.final p{
+
+    max-width:630px;
+
+    margin:34px auto 0;
+
+    color:var(--brown);
+
+    font-size:14px;
+
+    line-height:1.9;
+}
+
+.final-heart{
+
+    width:78px;
+    height:78px;
+
+    margin:42px auto 0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:var(--pink);
+
+    color:var(--wine);
+
+    font-size:28px;
+
+    animation:heartbeat 2s infinite;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+    padding:28px 7vw;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    border-top:1px solid var(--line);
+
+    background:var(--cream);
+
+    color:var(--brown);
+
+    font:
+        400 8px
+        "DM Mono",
+        monospace;
+
+    letter-spacing:.1em;
+
+    text-transform:uppercase;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:850px){
+
+    body{
+        cursor:auto;
     }
 
-    .reason .emoji {
-
-      font-size: 30px;
-
-      margin-bottom: 18px;
+    .cursor,
+    .cursor-label{
+        display:none;
     }
 
-    .reason h3 {
-
-      margin-bottom: 10px;
-
-      font-size: 18px;
-
-      color: #a84e6c;
+    nav{
+        padding:18px 20px;
     }
 
-    .reason p {
-
-      font-size: 14px;
-
-      line-height: 1.7;
+    .logo{
+        font-size:12px;
     }
 
-    /* =========================
-       FINAL
-    ========================= */
-
-    .final {
-
-      min-height: 90vh;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      text-align: center;
-
-      padding: 80px 20px;
+    .nav-links{
+        gap:13px;
     }
 
-    .final-inner {
-
-      max-width: 850px;
+    .nav-links a{
+        font-size:8px;
     }
 
-    .final h2 {
-
-      font-family: "Great Vibes", cursive;
-
-      font-weight: 400;
-
-      font-size: clamp(70px, 11vw, 130px);
-
-      color: #c85679;
+    .hero{
+        padding:125px 20px 60px;
     }
 
-    .final p {
-
-      margin-top: 25px;
-
-      font-size: 18px;
-
-      line-height: 2;
-
-      color: #775562;
+    .hero-card{
+        padding:35px 22px 40px;
     }
 
-    .signature {
-
-      margin-top: 45px;
-
-      font-family: "Great Vibes", cursive;
-
-      font-size: 45px;
-
-      color: #c85679;
+    .hero-name{
+        font-size:21vw;
     }
 
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-
-      text-align: center;
-
-      padding: 50px 20px 70px;
-
-      color: #a06a7b;
-
-      font-size: 13px;
+    .quote{
+        padding:100px 20px;
     }
 
-    /* =========================
-       SCROLL ANIMATION
-    ========================= */
-
-    .reveal {
-
-      opacity: 0;
-
-      transform:
-        translateY(50px);
-
-      transition:
-        opacity 1s ease,
-        transform 1s ease;
+    .quote-card{
+        padding:45px 25px;
     }
 
-    .reveal.show {
-
-      opacity: 1;
-
-      transform:
-        translateY(0);
+    .story{
+        padding:105px 20px;
     }
 
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media(max-width: 800px) {
-
-      .split {
-
-        grid-template-columns: 1fr;
-
-        gap: 40px;
-      }
-
-      .split.reverse {
-
-        direction: ltr;
-      }
-
-      .photo {
-
-        height: 380px;
-      }
-
-      .reasons {
-
-        grid-template-columns: 1fr;
-      }
-
-      section.story {
-
-        margin: 100px auto;
-      }
-
-      .memory-card {
-
-        padding: 30px;
-      }
+    .story-grid{
+        grid-template-columns:1fr;
+        gap:55px;
     }
 
-  </style>
+    .story-side{
+        text-align:center;
+    }
+
+    .story-side p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .distance{
+        padding:110px 20px;
+    }
+
+    .route{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .route-line{
+        margin:28px 0;
+    }
+
+    .notes{
+        padding:110px 20px;
+        background-attachment:scroll;
+    }
+
+    .notes-grid{
+        grid-template-columns:1fr;
+    }
+
+    .note:nth-child(1),
+    .note:nth-child(2),
+    .note:nth-child(3){
+        transform:none;
+    }
+
+    .letter-section{
+        padding:100px 20px;
+    }
+
+    .letter{
+        padding:50px 28px;
+    }
+
+    .letter p{
+        font-size:17px;
+    }
+
+    .final{
+        padding:100px 20px;
+    }
+
+    .final-inner{
+        padding:50px 24px;
+    }
+
+    footer{
+        flex-direction:column;
+    }
+}
+
+@media(max-width:560px){
+
+    .nav-links a:nth-child(3){
+        display:none;
+    }
+
+}
+
+</style>
 </head>
 
 
 <body>
 
-  <!-- Falling flowers -->
-  <div class="petal" style="left:5%; animation-duration:10s;">🌸</div>
-  <div class="petal" style="left:15%; animation-duration:14s; animation-delay:2s;">♡</div>
-  <div class="petal" style="left:30%; animation-duration:12s; animation-delay:4s;">🌷</div>
-  <div class="petal" style="left:48%; animation-duration:15s; animation-delay:1s;">♡</div>
-  <div class="petal" style="left:65%; animation-duration:11s; animation-delay:5s;">🌸</div>
-  <div class="petal" style="left:80%; animation-duration:13s; animation-delay:3s;">♡</div>
-  <div class="petal" style="left:93%; animation-duration:16s;">🌷</div>
+
+<!-- =====================================================
+     CURSOR
+===================================================== -->
+
+<div class="cursor"></div>
+
+<div class="cursor-label">
+    LOVE
+</div>
 
 
-  <!-- HERO -->
+<!-- =====================================================
+     NAV
+===================================================== -->
 
-  <header class="hero">
+<nav>
 
-    <div class="hero-content">
+    <a
+        href="#home"
+        class="logo"
+        data-cursor="HOME"
+    >
+        S ♥ Y
+    </a>
 
-      <div class="small-text">
-        a little corner of the internet
-      </div>
 
-      <h1>Yash</h1>
+    <div class="nav-links">
 
-      <h2>For the boy I love, even from miles away.</h2>
+        <a
+            href="#story"
+            data-cursor="STORY"
+        >
+            Story
+        </a>
 
-      <div class="heart-3d"></div>
+        <a
+            href="#distance"
+            data-cursor="US"
+        >
+            Us
+        </a>
 
-      <p class="hero-description">
-        I couldn't put everything I feel into one message,
-        so I made you a whole little world instead.
-      </p>
+        <a
+            href="#letter"
+            data-cursor="LETTER"
+        >
+            Letter
+        </a>
 
-      <a href="#begin" class="button">
-        Come inside ♡
-      </a>
+        <a
+            href="#forever"
+            data-cursor="FOREVER"
+        >
+            Forever
+        </a>
 
     </div>
 
-  </header>
+</nav>
 
 
+<main>
 
-  <!-- STORY 1 -->
 
-  <section class="story reveal" id="begin">
+<!-- =====================================================
+     HERO
+===================================================== -->
 
-    <div class="split">
+<section
+    class="hero"
+    id="home"
+>
 
-      <div>
+    <div class="hero-inner">
 
-        <div class="section-number">
-          01 — You
+        <div class="hero-card">
+
+
+            <div class="hero-kicker">
+
+                a tiny corner of the internet
+                made only for you
+
+            </div>
+
+
+            <div class="hero-name">
+
+                Yash,
+
+            </div>
+
+
+            <h1 class="hero-title">
+
+                this little world
+
+                <span>
+                    is yours.
+                </span>
+
+            </h1>
+
+
+            <p class="hero-text">
+
+                Somewhere between pixels,
+                late-night conversations,
+                distance and everything in between,
+                you became one of my favorite
+                parts of life.
+
+            </p>
+
+
+            <a
+                href="#story"
+                class="hero-button"
+                data-cursor="OPEN"
+            >
+
+                Start our story →
+
+            </a>
+
+
         </div>
 
-        <h2>How did you become so important?</h2>
-
-        <p>
-          I honestly don't know the exact moment when you
-          stopped being just someone I talked to and became
-          someone my heart automatically looks for.
-        </p>
-
-        <p>
-          Somehow your name became one of the names that
-          can instantly make me smile.
-        </p>
-
-        <p>
-          You're the person I want to tell things to.
-          The funny things. The stupid things.
-          The random things that probably don't matter
-          to anyone else.
-        </p>
-
-      </div>
-
-
-      <div>
-
-        <img
-          class="photo"
-          src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1200&q=85"
-          alt="Pink flowers"
-        >
-
-      </div>
-
     </div>
 
-  </section>
+</section>
 
 
+<!-- =====================================================
+     QUOTE
+===================================================== -->
 
-  <!-- STORY 2 -->
+<section
+    class="quote"
+>
 
-  <section class="story reveal">
+    <div class="quote-card reveal">
 
-    <div class="split reverse">
 
-      <div>
+        <div class="quote-small">
 
-        <div class="section-number">
-          02 — Distance
+            for the boy I never expected to meet
+
         </div>
 
-        <h2>Miles don't understand love.</h2>
+
+        <h2>
+
+            It started
+
+            <span>
+
+                somewhere unexpected.
+
+            </span>
+
+        </h2>
+
 
         <p>
-          Long distance can be annoying.
+
+            And somehow, the most random beginning
+            became one of the most important stories
+            in my life.
+
         </p>
 
-        <p>
-          There are days when I wish I could just appear
-          next to you instead of staring at a screen.
-        </p>
-
-        <p>
-          I want the boring things with you.
-          Sitting next to you.
-          Getting food together.
-          Walking somewhere without having to say goodbye.
-        </p>
-
-        <p>
-          But even when you're far away,
-          somehow you still feel close to me.
-        </p>
-
-      </div>
-
-
-      <div>
-
-        <img
-          class="photo"
-          src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1200&q=85"
-          alt="Romantic couple"
-        >
-
-      </div>
 
     </div>
 
-  </section>
+</section>
 
 
+<!-- =====================================================
+     STORY
+===================================================== -->
 
-  <!-- MEMORY CARD -->
+<section
+    class="story"
+    id="story"
+>
 
-  <section class="story reveal">
+    <div class="story-grid">
 
-    <div class="memory-card" data-tilt>
 
-      <div class="section-number">
-        03 — The little things
-      </div>
+        <div class="story-paper reveal">
 
-      <h3>I love the little things about you.</h3>
 
-      <p>
-        It's not just the huge romantic moments.
-      </p>
+            <div class="story-label">
 
-      <p>
-        It's the random conversations.
-        The jokes.
-        The little updates.
-        The moments where we somehow end up talking
-        longer than we planned.
-      </p>
+                chapter one / where it began
 
-      <p>
-        It's the fact that somewhere in this huge world,
-        there is a person whose existence can completely
-        change the mood of my day.
-      </p>
+            </div>
 
-    </div>
 
-  </section>
+            <h2>
 
+                It started
 
+                <br>
 
-  <!-- QUOTE -->
+                with a
 
-  <section class="quote-section reveal">
+                <span>
+                    block.
+                </span>
 
-    <div class="quote">
+            </h2>
 
-      <span>“</span>
 
-      <h2>
-        If I could choose one person
-        to cross all these miles for...
-        it would still be you.
-      </h2>
+            <p>
 
-      <p>
-        And I'd probably complain about the distance
-        the entire way. ♡
-      </p>
+                Of all the places two people could
+                possibly meet, somehow we found each
+                other in Minecraft.
 
-    </div>
+            </p>
 
-  </section>
 
+            <p>
 
+                A little pixel world.
+                A random moment.
+                A completely ordinary beginning.
 
-  <!-- REASONS -->
+                Except it wasn't ordinary anymore
+                once you became part of it.
 
-  <section class="story reveal">
+            </p>
 
-    <div class="section-number">
-      04 — Reasons
-    </div>
 
-    <h2>A few reasons I love you</h2>
+            <p>
 
+                I never knew that a game could give
+                me a person I would eventually care
+                about this much.
 
-    <div class="reasons">
+            </p>
 
-      <div class="reason">
 
-        <div class="emoji">♡</div>
-
-        <h3>You make ordinary days special.</h3>
-
-        <p>
-          Somehow even a completely normal conversation
-          with you can become one of my favourite parts
-          of the day.
-        </p>
-
-      </div>
-
-
-      <div class="reason">
-
-        <div class="emoji">🌸</div>
-
-        <h3>You feel like home.</h3>
-
-        <p>
-          Not a place.
-          Not a room.
-          Just a feeling of being comfortable,
-          understood and wanted.
-        </p>
-
-      </div>
-
-
-      <div class="reason">
-
-        <div class="emoji">💗</div>
-
-        <h3>I can be myself with you.</h3>
-
-        <p>
-          I don't need to pretend to be perfect.
-          I can just be me.
-        </p>
-
-      </div>
-
-
-      <div class="reason">
-
-        <div class="emoji">🌷</div>
-
-        <h3>I miss you ridiculously.</h3>
-
-        <p>
-          And honestly, sometimes I hate how much
-          I miss you because I just want you here.
-        </p>
-
-      </div>
-
-
-      <div class="reason">
-
-        <div class="emoji">✨</div>
-
-        <h3>I see a future.</h3>
-
-        <p>
-          I don't just think about today.
-          I think about all the memories we haven't
-          made yet.
-        </p>
-
-      </div>
-
-
-      <div class="reason">
-
-        <div class="emoji">🫶</div>
-
-        <h3>Because you're you.</h3>
-
-        <p>
-          And somehow that is my favourite reason
-          of all.
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- FLOWER IMAGE -->
-
-  <section class="story reveal">
-
-    <div class="split">
-
-      <div>
-
-        <img
-          class="photo"
-          src="https://images.unsplash.com/photo-1509223197845-458d87318791?auto=format&fit=crop&w=1200&q=85"
-          alt="Romantic pink flowers"
-        >
-
-      </div>
-
-
-      <div>
-
-        <div class="section-number">
-          05 — Someday
         </div>
 
-        <h2>One day, the distance will just be a memory.</h2>
 
-        <p>
-          One day I hope we don't have to count the days
-          until we see each other.
-        </p>
+        <div class="story-side reveal">
 
-        <p>
-          I hope we get to experience all the tiny things
-          that long distance makes us dream about.
-        </p>
 
-        <p>
-          And when that happens,
-          I think we'll appreciate the ordinary moments
-          more than most people ever could.
-        </p>
+            <small>
 
-      </div>
+                our favorite plot twist
+
+            </small>
+
+
+            <h3>
+
+                A game
+
+                <br>
+
+                gave me
+
+                <span>
+                    you.
+                </span>
+
+            </h3>
+
+
+            <p>
+
+                And honestly, I don't think I would
+                trade that beginning for anything.
+
+            </p>
+
+
+        </div>
+
 
     </div>
 
-  </section>
+</section>
 
 
+<!-- =====================================================
+     DISTANCE
+===================================================== -->
 
-  <!-- FINAL -->
+<section
+    class="distance"
+    id="distance"
+>
 
-  <section class="final reveal">
 
-    <div class="final-inner">
+    <div class="distance-inner">
 
-      <div class="small-text">
-        and this is the part I mean the most
-      </div>
 
-      <h2>I love you, Yash.</h2>
+        <div class="distance-label">
 
-      <p>
-        More than a webpage can explain.
-        More than a paragraph can hold.
-        More than I probably know how to put into words.
-      </p>
+            chapter two / long distance
 
-      <p>
-        I love you across the distance,
-        across the bad days,
-        across the boring days,
-        across everything.
-      </p>
+        </div>
 
-      <p>
-        And if I had to choose you again,
-        I'd still choose you.
-      </p>
 
-      <div class="signature">
-        — always yours ♡
-      </div>
+        <h2 class="reveal">
+
+            Miles apart,
+
+            <span>
+
+                never hearts apart.
+
+            </span>
+
+        </h2>
+
+
+        <div class="route reveal">
+
+
+            <div class="route-name">
+
+                SHANAYA
+
+            </div>
+
+
+            <div class="route-line">
+
+
+                <div class="route-heart">
+
+                    ♥
+
+                </div>
+
+
+            </div>
+
+
+            <div class="route-name">
+
+                YASH
+
+            </div>
+
+
+        </div>
+
+
+        <p class="distance-text reveal">
+
+            There are days when I wish distance was
+            something I could simply switch off.
+
+            I wish I could skip the waiting, the
+            missing-you moments and all the times
+            I wish you were simply here.
+
+            But somehow, even from far away,
+            you still manage to feel close.
+
+            Maybe that is the beautiful part.
+
+            Distance can tell us how many kilometres
+            separate us.
+
+            It cannot measure how much you mean to me.
+
+        </p>
+
 
     </div>
 
-  </section>
+
+</section>
 
 
+<!-- =====================================================
+     REASONS
+===================================================== -->
 
-  <footer>
-
-    Made with love, flowers and a ridiculous amount of missing you. 🌸
-
-  </footer>
+<section
+    class="notes"
+>
 
 
+    <h2 class="notes-title reveal">
 
-  <script>
+        Little things
 
-    /* =========================
-       SCROLL REVEAL
-    ========================= */
+        <br>
 
-    const elements =
-      document.querySelectorAll(".reveal");
+        I love
 
-    const observer =
-      new IntersectionObserver(
-        (entries) => {
+        <span>
+            about you.
+        </span>
 
-          entries.forEach(entry => {
+    </h2>
 
-            if (entry.isIntersecting) {
 
-              entry.target.classList.add("show");
+    <div class="notes-grid">
+
+
+        <div class="note reveal">
+
+            <div class="note-symbol">
+
+                ♡
+
+            </div>
+
+
+            <h3>
+
+                You make me smile.
+
+            </h3>
+
+
+            <p>
+
+                Even on completely normal days,
+                somehow you can make everything
+                feel a little better.
+
+            </p>
+
+        </div>
+
+
+        <div class="note reveal">
+
+            <div class="note-symbol">
+
+                ✦
+
+            </div>
+
+
+            <h3>
+
+                Your little things.
+
+            </h3>
+
+
+            <p>
+
+                The things you probably don't
+                even realise you do are some of
+                the things I notice the most.
+
+            </p>
+
+        </div>
+
+
+        <div class="note reveal">
+
+            <div class="note-symbol">
+
+                ∞
+
+            </div>
+
+
+            <h3>
+
+                Us.
+
+            </h3>
+
+
+            <p>
+
+                Because even with distance,
+                I still wouldn't trade the story
+                that brought us together.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- =====================================================
+     LETTER
+===================================================== -->
+
+<section
+    class="letter-section"
+    id="letter"
+>
+
+
+    <div class="letter reveal">
+
+
+        <div class="letter-top">
+
+
+            <span>
+
+                a letter from Shanaya
+
+            </span>
+
+
+            <span>
+
+                for Yash
+
+            </span>
+
+
+        </div>
+
+
+        <h2>
+
+            Dear
+
+            <span>
+                Yash,
+            </span>
+
+        </h2>
+
+
+        <p>
+
+            I still think it is a little funny that
+            out of all the people in the world,
+            out of all the places we could have met,
+            somehow we found each other in Minecraft.
+
+        </p>
+
+
+        <p>
+
+            It started in a world made of blocks
+            and pixels, something that was probably
+            supposed to be just another ordinary day,
+            and somehow that tiny beginning turned
+            into something that means so much more
+            to me. I never expected meeting you
+            would become such an important part of
+            my life.
+
+        </p>
+
+
+        <p>
+
+            I never expected a random conversation
+            to turn into late-night talks, inside
+            jokes, little memories, missing each
+            other, caring about each other's days,
+            and eventually this feeling that no matter
+            how far away you are, you still feel
+            incredibly close to me.
+
+        </p>
+
+
+        <p>
+
+            There are so many moments when I wish
+            distance wasn't a thing. I wish I could
+            just turn around and find you next to me.
+            I want the ordinary things with you —
+            sitting together, talking about absolutely
+            nothing, laughing at something stupid,
+            going somewhere just because we can,
+            and having those quiet moments where we
+            don't even have to say anything.
+
+        </p>
+
+
+        <p>
+
+            Sometimes the distance feels unfair
+            because I don't want a screen between us;
+            I want you here. I want to make real
+            memories with you instead of imagining
+            what those memories will feel like.
+
+        </p>
+
+
+        <p>
+
+            But even with all those miles between us,
+            I hope you know how much you mean to me.
+            You have become someone I look for,
+            someone I think about, someone whose
+            messages can completely change my mood,
+            and someone I genuinely cannot imagine
+            my life without anymore.
+
+        </p>
+
+
+        <p>
+
+            I love the little things about you,
+            the things you probably don't even realise
+            I notice. I love the way you make me smile,
+            the way you make ordinary conversations
+            feel special, and the way somehow you can
+            make me feel close to you even when you're
+            far away.
+
+        </p>
+
+
+        <p>
+
+            And more than anything, I love us.
+
+            I love that our story didn't begin in
+            some perfect movie moment.
+
+            It began somewhere completely unexpected,
+            somewhere simple, somewhere we probably
+            never would have imagined would become
+            the beginning of this.
+
+        </p>
+
+
+        <p>
+
+            A Minecraft world gave me a person I now
+            care about more than I know how to explain.
+
+            And maybe that is my favorite part of our
+            story — that something so random became
+            something so real.
+
+        </p>
+
+
+        <p>
+
+            So yes, I miss you.
+
+            A lot.
+
+            I hate the distance sometimes.
+            I hate having to count the time until
+            we can finally be in the same place.
+
+            But I would still choose you.
+
+        </p>
+
+
+        <p>
+
+            Through the waiting, through the miles,
+            through every moment where I wish you
+            were here, I would still choose you.
+
+            Because you are worth the distance,
+            worth the waiting, and worth every mile
+            between us.
+
+        </p>
+
+
+        <p>
+
+            Until the day I don't have to miss you
+            anymore, until the day I can actually
+            be beside you instead of writing these
+            words from far away, I hope you always
+            remember one thing:
+
+        </p>
+
+
+        <p>
+
+            There is a girl named Shanaya who loves
+            you very, very much, who is incredibly
+            grateful that a random Minecraft world
+            somehow led her to you, and who cannot
+            wait to see what the next chapter of
+            our story looks like.
+
+        </p>
+
+
+        <p>
+
+            I love you, Yash.
+
+            More than these words can fit on a page.
+
+        </p>
+
+
+        <div class="signature">
+
+            Love,
+
+            <br>
+
+            Shanaya ♥
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FINAL
+===================================================== -->
+
+<section
+    class="final"
+    id="forever"
+>
+
+
+    <div class="final-inner reveal">
+
+
+        <div class="final-small">
+
+            the next chapter
+
+        </div>
+
+
+        <h2>
+
+            We started in a game.
+
+            <em>
+
+                I hope we end up together.
+
+            </em>
+
+        </h2>
+
+
+        <p>
+
+            Maybe one day we'll look back at this
+            beginning and laugh about how strange
+            it is that a Minecraft world brought us
+            together.
+
+            Until then, I will keep choosing you,
+            keep believing in us, and keep waiting
+            for the day distance isn't part of our
+            story anymore.
+
+        </p>
+
+
+        <div class="final-heart">
+
+            ♥
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <span>
+
+        Made with love by Shanaya
+
+    </span>
+
+
+    <span>
+
+        S ♥ Y — always
+
+    </span>
+
+</footer>
+
+
+</main>
+
+
+<script>
+
+/* =========================================================
+   CURSOR
+========================================================= */
+
+const cursor =
+    document.querySelector(".cursor");
+
+const cursorLabel =
+    document.querySelector(".cursor-label");
+
+let mouseX =
+    window.innerWidth / 2;
+
+let mouseY =
+    window.innerHeight / 2;
+
+let currentX =
+    mouseX;
+
+let currentY =
+    mouseY;
+
+
+document.addEventListener(
+    "mousemove",
+    event => {
+
+        mouseX =
+            event.clientX;
+
+        mouseY =
+            event.clientY;
+
+    }
+);
+
+
+function cursorLoop(){
+
+    currentX +=
+        (
+            mouseX -
+            currentX
+        ) * .18;
+
+    currentY +=
+        (
+            mouseY -
+            currentY
+        ) * .18;
+
+
+    cursor.style.left =
+        currentX + "px";
+
+    cursor.style.top =
+        currentY + "px";
+
+
+    cursorLabel.style.left =
+        currentX + "px";
+
+    cursorLabel.style.top =
+        currentY + "px";
+
+
+    requestAnimationFrame(
+        cursorLoop
+    );
+
+}
+
+cursorLoop();
+
+
+/* =========================================================
+   CURSOR HOVER
+========================================================= */
+
+document
+.querySelectorAll(
+    "[data-cursor]"
+)
+.forEach(
+    element => {
+
+        element.addEventListener(
+            "mouseenter",
+            () => {
+
+                cursor.classList.add(
+                    "hover"
+                );
+
+                cursorLabel.textContent =
+                    element.dataset.cursor;
+
+                cursorLabel.classList.add(
+                    "show"
+                );
 
             }
+        );
 
-          });
+
+        element.addEventListener(
+            "mouseleave",
+            () => {
+
+                cursor.classList.remove(
+                    "hover"
+                );
+
+                cursorLabel.classList.remove(
+                    "show"
+                );
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================================================
+   SCROLL REVEALS
+========================================================= */
+
+const revealObserver =
+    new IntersectionObserver(
+
+        entries => {
+
+            entries.forEach(
+                entry => {
+
+                    if(
+                        entry.isIntersecting
+                    ){
+
+                        entry.target.classList.add(
+                            "visible"
+                        );
+
+                    }
+
+                }
+            );
 
         },
+
         {
-          threshold: 0.15
+            threshold:.12
         }
-      );
+
+    );
 
 
-    elements.forEach(element => {
-
-      observer.observe(element);
-
-    });
-
-
-
-    /* =========================
-       3D CARD MOUSE EFFECT
-    ========================= */
-
-    const cards =
-      document.querySelectorAll("[data-tilt]");
+document
+.querySelectorAll(
+    ".reveal"
+)
+.forEach(
+    element =>
+        revealObserver.observe(
+            element
+        )
+);
 
 
-    cards.forEach(card => {
+/* =========================================================
+   SOFT CLICK SOUND
+========================================================= */
 
-      card.addEventListener("mousemove", (e) => {
-
-        const rect =
-          card.getBoundingClientRect();
-
-        const x =
-          e.clientX - rect.left;
-
-        const y =
-          e.clientY - rect.top;
-
-        const centerX =
-          rect.width / 2;
-
-        const centerY =
-          rect.height / 2;
-
-        const rotateX =
-          ((y - centerY) / centerY) * -4;
-
-        const rotateY =
-          ((x - centerX) / centerX) * 4;
-
-        card.style.transform =
-          `perspective(1000px)
-           rotateX(${rotateX}deg)
-           rotateY(${rotateY}deg)
-           translateY(-5px)`;
-
-      });
+let audioContext =
+    null;
 
 
-      card.addEventListener("mouseleave", () => {
+function softClick(){
 
-        card.style.transform =
-          "perspective(1000px) rotateX(0) rotateY(0)";
+    try{
 
-      });
+        if(!audioContext){
 
-    });
+            audioContext =
+                new(
+                    window.AudioContext ||
+                    window.webkitAudioContext
+                )();
+
+        }
 
 
-  </script>
+        if(
+            audioContext.state ===
+            "suspended"
+        ){
+
+            audioContext.resume();
+
+        }
+
+
+        const oscillator =
+            audioContext.createOscillator();
+
+        const gain =
+            audioContext.createGain();
+
+
+        oscillator.type =
+            "sine";
+
+
+        oscillator.frequency.setValueAtTime(
+            690,
+            audioContext.currentTime
+        );
+
+
+        oscillator.frequency.exponentialRampToValueAtTime(
+            390,
+            audioContext.currentTime + .08
+        );
+
+
+        gain.gain.setValueAtTime(
+            .0001,
+            audioContext.currentTime
+        );
+
+
+        gain.gain.exponentialRampToValueAtTime(
+            .012,
+            audioContext.currentTime + .01
+        );
+
+
+        gain.gain.exponentialRampToValueAtTime(
+            .0001,
+            audioContext.currentTime + .1
+        );
+
+
+        oscillator.connect(
+            gain
+        );
+
+
+        gain.connect(
+            audioContext.destination
+        );
+
+
+        oscillator.start();
+
+
+        oscillator.stop(
+            audioContext.currentTime + .11
+        );
+
+    }
+
+    catch(error){}
+
+}
+
+
+document.addEventListener(
+    "pointerdown",
+    softClick,
+    {
+        passive:true
+    }
+);
+
+
+/* =========================================================
+   LITTLE HEARTS ON CLICK
+========================================================= */
+
+document.addEventListener(
+    "click",
+    event => {
+
+        for(
+            let i=0;
+            i<2;
+            i++
+        ){
+
+            const heart =
+                document.createElement(
+                    "span"
+                );
+
+
+            heart.textContent =
+                "♡";
+
+
+            heart.style.position =
+                "fixed";
+
+
+            heart.style.left =
+                (
+                    event.clientX
+                    +
+                    Math.random()*18
+                    -
+                    9
+                )
+                + "px";
+
+
+            heart.style.top =
+                (
+                    event.clientY
+                    +
+                    Math.random()*18
+                    -
+                    9
+                )
+                + "px";
+
+
+            heart.style.color =
+                "rgba(168,95,106,.65)";
+
+
+            heart.style.fontSize =
+                "14px";
+
+
+            heart.style.pointerEvents =
+                "none";
+
+
+            heart.style.zIndex =
+                "9997";
+
+
+            heart.style.transition =
+                "all .85s ease";
+
+
+            document.body.appendChild(
+                heart
+            );
+
+
+            requestAnimationFrame(
+                () => {
+
+                    heart.style.transform =
+                        `translate(
+                            ${(Math.random()*35)-17}px,
+                            -${45+Math.random()*40}px
+                        )`;
+
+                    heart.style.opacity =
+                        "0";
+
+                }
+            );
+
+
+            setTimeout(
+                () => {
+
+                    heart.remove();
+
+                },
+                900
+            );
+
+        }
+
+    }
+);
+
+</script>
 
 </body>
 </html>
-```
