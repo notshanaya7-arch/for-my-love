@@ -1,0 +1,1192 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>For Yash ♡</title>
+
+  <!-- Romantic fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <style>
+
+    /* =========================
+       BASIC
+    ========================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 10% 10%, #ffe5ef 0%, transparent 30%),
+        radial-gradient(circle at 90% 30%, #ffd6e5 0%, transparent 30%),
+        #fff8fa;
+
+      color: #633d4a;
+      font-family: "DM Sans", sans-serif;
+
+      overflow-x: hidden;
+    }
+
+    /* =========================
+       FLOATING PETALS
+    ========================= */
+
+    .petal {
+      position: fixed;
+      top: -30px;
+      z-index: 20;
+      pointer-events: none;
+
+      font-size: 18px;
+
+      animation:
+        falling linear infinite;
+
+      opacity: 0.7;
+    }
+
+    @keyframes falling {
+
+      0% {
+        transform:
+          translateY(-50px)
+          translateX(0)
+          rotate(0deg);
+
+        opacity: 0;
+      }
+
+      15% {
+        opacity: .8;
+      }
+
+      100% {
+        transform:
+          translateY(110vh)
+          translateX(100px)
+          rotate(360deg);
+
+        opacity: 0;
+      }
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+
+      min-height: 100vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 60px 25px;
+
+      position: relative;
+    }
+
+    .hero-content {
+
+      text-align: center;
+
+      max-width: 850px;
+
+      position: relative;
+
+      z-index: 3;
+    }
+
+    .small-text {
+
+      text-transform: uppercase;
+
+      letter-spacing: 5px;
+
+      font-size: 12px;
+
+      color: #b56b83;
+
+      margin-bottom: 25px;
+    }
+
+    .hero h1 {
+
+      font-family: "Great Vibes", cursive;
+
+      font-size: clamp(80px, 14vw, 150px);
+
+      font-weight: 400;
+
+      color: #c9577c;
+
+      line-height: .9;
+
+      text-shadow:
+        0 10px 25px rgba(180, 70, 105, .15);
+    }
+
+    .hero h2 {
+
+      margin-top: 25px;
+
+      font-size: clamp(20px, 3vw, 30px);
+
+      font-weight: 500;
+
+      color: #734454;
+    }
+
+    .hero-description {
+
+      max-width: 600px;
+
+      margin: 30px auto;
+
+      font-size: 17px;
+
+      line-height: 1.9;
+
+      color: #8c6470;
+    }
+
+    /* =========================
+       3D HEART
+    ========================= */
+
+    .heart-3d {
+
+      width: 80px;
+      height: 80px;
+
+      margin: 35px auto;
+
+      position: relative;
+
+      transform:
+        rotate(-45deg)
+        perspective(500px);
+
+      animation:
+        heartFloat 3s ease-in-out infinite;
+
+      filter:
+        drop-shadow(0 20px 20px rgba(200, 75, 115, .25));
+    }
+
+    .heart-3d::before,
+    .heart-3d::after {
+
+      content: "";
+
+      position: absolute;
+
+      width: 80px;
+      height: 80px;
+
+      border-radius: 50%;
+
+      background:
+        linear-gradient(
+          135deg,
+          #ffb5cc,
+          #e96d97
+        );
+    }
+
+    .heart-3d::before {
+      top: -40px;
+      left: 0;
+    }
+
+    .heart-3d::after {
+      left: 40px;
+      top: 0;
+    }
+
+    @keyframes heartFloat {
+
+      0%,100% {
+        transform:
+          rotate(-45deg)
+          translateY(0);
+      }
+
+      50% {
+        transform:
+          rotate(-45deg)
+          translateY(-12px);
+      }
+    }
+
+    /* =========================
+       BUTTON
+    ========================= */
+
+    .button {
+
+      display: inline-block;
+
+      padding: 15px 30px;
+
+      border-radius: 50px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #ef91ad,
+          #d96489
+        );
+
+      color: white;
+
+      text-decoration: none;
+
+      font-size: 14px;
+
+      box-shadow:
+        0 15px 30px rgba(211, 89, 126, .25);
+
+      transition: .3s;
+    }
+
+    .button:hover {
+
+      transform:
+        translateY(-5px)
+        scale(1.03);
+
+      box-shadow:
+        0 20px 35px rgba(211, 89, 126, .35);
+    }
+
+    /* =========================
+       IMAGE
+    ========================= */
+
+    .photo {
+
+      width: 100%;
+
+      height: 500px;
+
+      object-fit: cover;
+
+      border-radius: 25px;
+
+      box-shadow:
+        0 30px 70px rgba(112, 52, 73, .18);
+
+      transition: transform .6s ease;
+    }
+
+    .photo:hover {
+
+      transform:
+        scale(1.025);
+    }
+
+    /* =========================
+       SECTIONS
+    ========================= */
+
+    section.story {
+
+      width: min(1100px, 90%);
+
+      margin: 150px auto;
+
+      position: relative;
+    }
+
+    .section-number {
+
+      font-size: 12px;
+
+      letter-spacing: 4px;
+
+      text-transform: uppercase;
+
+      color: #c47a91;
+
+      margin-bottom: 20px;
+    }
+
+    .story h2 {
+
+      font-family: "Great Vibes", cursive;
+
+      font-weight: 400;
+
+      font-size: clamp(50px, 7vw, 85px);
+
+      color: #bd5879;
+
+      line-height: 1;
+
+      margin-bottom: 30px;
+    }
+
+    .story p {
+
+      font-size: 17px;
+
+      line-height: 2;
+
+      color: #755762;
+
+      margin-bottom: 20px;
+    }
+
+    /* =========================
+       SPLIT SECTIONS
+    ========================= */
+
+    .split {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 70px;
+
+      align-items: center;
+    }
+
+    .split.reverse {
+
+      direction: rtl;
+    }
+
+    .split.reverse > * {
+
+      direction: ltr;
+    }
+
+    /* =========================
+       3D CARD
+    ========================= */
+
+    .memory-card {
+
+      background:
+        rgba(255,255,255,.65);
+
+      backdrop-filter:
+        blur(15px);
+
+      border:
+        1px solid rgba(255,255,255,.8);
+
+      border-radius: 30px;
+
+      padding: 45px;
+
+      box-shadow:
+        0 30px 80px rgba(120, 57, 78, .12);
+
+      transition:
+        transform .15s ease;
+
+      transform-style: preserve-3d;
+    }
+
+    .memory-card h3 {
+
+      font-family: "Great Vibes", cursive;
+
+      font-size: 48px;
+
+      font-weight: 400;
+
+      color: #c25d7d;
+
+      margin-bottom: 20px;
+    }
+
+    /* =========================
+       QUOTE
+    ========================= */
+
+    .quote-section {
+
+      min-height: 70vh;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      text-align: center;
+
+      padding: 80px 25px;
+
+      position: relative;
+    }
+
+    .quote {
+
+      max-width: 850px;
+    }
+
+    .quote span {
+
+      font-size: 70px;
+
+      color: #e889a6;
+    }
+
+    .quote h2 {
+
+      font-family: "Great Vibes", cursive;
+
+      font-weight: 400;
+
+      font-size: clamp(50px, 8vw, 95px);
+
+      color: #c35679;
+
+      line-height: 1.1;
+    }
+
+    .quote p {
+
+      margin-top: 25px;
+
+      font-size: 16px;
+
+      color: #85636d;
+    }
+
+    /* =========================
+       REASONS
+    ========================= */
+
+    .reasons {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 20px;
+    }
+
+    .reason {
+
+      padding: 35px 25px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #fff,
+          #ffe8ef
+        );
+
+      border-radius: 25px;
+
+      box-shadow:
+        0 20px 50px rgba(116, 54, 76, .09);
+
+      transition: .35s;
+
+      border:
+        1px solid rgba(255,255,255,.8);
+    }
+
+    .reason:hover {
+
+      transform:
+        translateY(-10px)
+        rotateX(4deg);
+
+      box-shadow:
+        0 30px 60px rgba(116, 54, 76, .15);
+    }
+
+    .reason .emoji {
+
+      font-size: 30px;
+
+      margin-bottom: 18px;
+    }
+
+    .reason h3 {
+
+      margin-bottom: 10px;
+
+      font-size: 18px;
+
+      color: #a84e6c;
+    }
+
+    .reason p {
+
+      font-size: 14px;
+
+      line-height: 1.7;
+    }
+
+    /* =========================
+       FINAL
+    ========================= */
+
+    .final {
+
+      min-height: 90vh;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      text-align: center;
+
+      padding: 80px 20px;
+    }
+
+    .final-inner {
+
+      max-width: 850px;
+    }
+
+    .final h2 {
+
+      font-family: "Great Vibes", cursive;
+
+      font-weight: 400;
+
+      font-size: clamp(70px, 11vw, 130px);
+
+      color: #c85679;
+    }
+
+    .final p {
+
+      margin-top: 25px;
+
+      font-size: 18px;
+
+      line-height: 2;
+
+      color: #775562;
+    }
+
+    .signature {
+
+      margin-top: 45px;
+
+      font-family: "Great Vibes", cursive;
+
+      font-size: 45px;
+
+      color: #c85679;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+
+      text-align: center;
+
+      padding: 50px 20px 70px;
+
+      color: #a06a7b;
+
+      font-size: 13px;
+    }
+
+    /* =========================
+       SCROLL ANIMATION
+    ========================= */
+
+    .reveal {
+
+      opacity: 0;
+
+      transform:
+        translateY(50px);
+
+      transition:
+        opacity 1s ease,
+        transform 1s ease;
+    }
+
+    .reveal.show {
+
+      opacity: 1;
+
+      transform:
+        translateY(0);
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media(max-width: 800px) {
+
+      .split {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+      }
+
+      .split.reverse {
+
+        direction: ltr;
+      }
+
+      .photo {
+
+        height: 380px;
+      }
+
+      .reasons {
+
+        grid-template-columns: 1fr;
+      }
+
+      section.story {
+
+        margin: 100px auto;
+      }
+
+      .memory-card {
+
+        padding: 30px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <!-- Falling flowers -->
+  <div class="petal" style="left:5%; animation-duration:10s;">🌸</div>
+  <div class="petal" style="left:15%; animation-duration:14s; animation-delay:2s;">♡</div>
+  <div class="petal" style="left:30%; animation-duration:12s; animation-delay:4s;">🌷</div>
+  <div class="petal" style="left:48%; animation-duration:15s; animation-delay:1s;">♡</div>
+  <div class="petal" style="left:65%; animation-duration:11s; animation-delay:5s;">🌸</div>
+  <div class="petal" style="left:80%; animation-duration:13s; animation-delay:3s;">♡</div>
+  <div class="petal" style="left:93%; animation-duration:16s;">🌷</div>
+
+
+  <!-- HERO -->
+
+  <header class="hero">
+
+    <div class="hero-content">
+
+      <div class="small-text">
+        a little corner of the internet
+      </div>
+
+      <h1>Yash</h1>
+
+      <h2>For the boy I love, even from miles away.</h2>
+
+      <div class="heart-3d"></div>
+
+      <p class="hero-description">
+        I couldn't put everything I feel into one message,
+        so I made you a whole little world instead.
+      </p>
+
+      <a href="#begin" class="button">
+        Come inside ♡
+      </a>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- STORY 1 -->
+
+  <section class="story reveal" id="begin">
+
+    <div class="split">
+
+      <div>
+
+        <div class="section-number">
+          01 — You
+        </div>
+
+        <h2>How did you become so important?</h2>
+
+        <p>
+          I honestly don't know the exact moment when you
+          stopped being just someone I talked to and became
+          someone my heart automatically looks for.
+        </p>
+
+        <p>
+          Somehow your name became one of the names that
+          can instantly make me smile.
+        </p>
+
+        <p>
+          You're the person I want to tell things to.
+          The funny things. The stupid things.
+          The random things that probably don't matter
+          to anyone else.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <img
+          class="photo"
+          src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1200&q=85"
+          alt="Pink flowers"
+        >
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- STORY 2 -->
+
+  <section class="story reveal">
+
+    <div class="split reverse">
+
+      <div>
+
+        <div class="section-number">
+          02 — Distance
+        </div>
+
+        <h2>Miles don't understand love.</h2>
+
+        <p>
+          Long distance can be annoying.
+        </p>
+
+        <p>
+          There are days when I wish I could just appear
+          next to you instead of staring at a screen.
+        </p>
+
+        <p>
+          I want the boring things with you.
+          Sitting next to you.
+          Getting food together.
+          Walking somewhere without having to say goodbye.
+        </p>
+
+        <p>
+          But even when you're far away,
+          somehow you still feel close to me.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <img
+          class="photo"
+          src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1200&q=85"
+          alt="Romantic couple"
+        >
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- MEMORY CARD -->
+
+  <section class="story reveal">
+
+    <div class="memory-card" data-tilt>
+
+      <div class="section-number">
+        03 — The little things
+      </div>
+
+      <h3>I love the little things about you.</h3>
+
+      <p>
+        It's not just the huge romantic moments.
+      </p>
+
+      <p>
+        It's the random conversations.
+        The jokes.
+        The little updates.
+        The moments where we somehow end up talking
+        longer than we planned.
+      </p>
+
+      <p>
+        It's the fact that somewhere in this huge world,
+        there is a person whose existence can completely
+        change the mood of my day.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- QUOTE -->
+
+  <section class="quote-section reveal">
+
+    <div class="quote">
+
+      <span>“</span>
+
+      <h2>
+        If I could choose one person
+        to cross all these miles for...
+        it would still be you.
+      </h2>
+
+      <p>
+        And I'd probably complain about the distance
+        the entire way. ♡
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- REASONS -->
+
+  <section class="story reveal">
+
+    <div class="section-number">
+      04 — Reasons
+    </div>
+
+    <h2>A few reasons I love you</h2>
+
+
+    <div class="reasons">
+
+      <div class="reason">
+
+        <div class="emoji">♡</div>
+
+        <h3>You make ordinary days special.</h3>
+
+        <p>
+          Somehow even a completely normal conversation
+          with you can become one of my favourite parts
+          of the day.
+        </p>
+
+      </div>
+
+
+      <div class="reason">
+
+        <div class="emoji">🌸</div>
+
+        <h3>You feel like home.</h3>
+
+        <p>
+          Not a place.
+          Not a room.
+          Just a feeling of being comfortable,
+          understood and wanted.
+        </p>
+
+      </div>
+
+
+      <div class="reason">
+
+        <div class="emoji">💗</div>
+
+        <h3>I can be myself with you.</h3>
+
+        <p>
+          I don't need to pretend to be perfect.
+          I can just be me.
+        </p>
+
+      </div>
+
+
+      <div class="reason">
+
+        <div class="emoji">🌷</div>
+
+        <h3>I miss you ridiculously.</h3>
+
+        <p>
+          And honestly, sometimes I hate how much
+          I miss you because I just want you here.
+        </p>
+
+      </div>
+
+
+      <div class="reason">
+
+        <div class="emoji">✨</div>
+
+        <h3>I see a future.</h3>
+
+        <p>
+          I don't just think about today.
+          I think about all the memories we haven't
+          made yet.
+        </p>
+
+      </div>
+
+
+      <div class="reason">
+
+        <div class="emoji">🫶</div>
+
+        <h3>Because you're you.</h3>
+
+        <p>
+          And somehow that is my favourite reason
+          of all.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- FLOWER IMAGE -->
+
+  <section class="story reveal">
+
+    <div class="split">
+
+      <div>
+
+        <img
+          class="photo"
+          src="https://images.unsplash.com/photo-1509223197845-458d87318791?auto=format&fit=crop&w=1200&q=85"
+          alt="Romantic pink flowers"
+        >
+
+      </div>
+
+
+      <div>
+
+        <div class="section-number">
+          05 — Someday
+        </div>
+
+        <h2>One day, the distance will just be a memory.</h2>
+
+        <p>
+          One day I hope we don't have to count the days
+          until we see each other.
+        </p>
+
+        <p>
+          I hope we get to experience all the tiny things
+          that long distance makes us dream about.
+        </p>
+
+        <p>
+          And when that happens,
+          I think we'll appreciate the ordinary moments
+          more than most people ever could.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- FINAL -->
+
+  <section class="final reveal">
+
+    <div class="final-inner">
+
+      <div class="small-text">
+        and this is the part I mean the most
+      </div>
+
+      <h2>I love you, Yash.</h2>
+
+      <p>
+        More than a webpage can explain.
+        More than a paragraph can hold.
+        More than I probably know how to put into words.
+      </p>
+
+      <p>
+        I love you across the distance,
+        across the bad days,
+        across the boring days,
+        across everything.
+      </p>
+
+      <p>
+        And if I had to choose you again,
+        I'd still choose you.
+      </p>
+
+      <div class="signature">
+        — always yours ♡
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <footer>
+
+    Made with love, flowers and a ridiculous amount of missing you. 🌸
+
+  </footer>
+
+
+
+  <script>
+
+    /* =========================
+       SCROLL REVEAL
+    ========================= */
+
+    const elements =
+      document.querySelectorAll(".reveal");
+
+    const observer =
+      new IntersectionObserver(
+        (entries) => {
+
+          entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add("show");
+
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.15
+        }
+      );
+
+
+    elements.forEach(element => {
+
+      observer.observe(element);
+
+    });
+
+
+
+    /* =========================
+       3D CARD MOUSE EFFECT
+    ========================= */
+
+    const cards =
+      document.querySelectorAll("[data-tilt]");
+
+
+    cards.forEach(card => {
+
+      card.addEventListener("mousemove", (e) => {
+
+        const rect =
+          card.getBoundingClientRect();
+
+        const x =
+          e.clientX - rect.left;
+
+        const y =
+          e.clientY - rect.top;
+
+        const centerX =
+          rect.width / 2;
+
+        const centerY =
+          rect.height / 2;
+
+        const rotateX =
+          ((y - centerY) / centerY) * -4;
+
+        const rotateY =
+          ((x - centerX) / centerX) * 4;
+
+        card.style.transform =
+          `perspective(1000px)
+           rotateX(${rotateX}deg)
+           rotateY(${rotateY}deg)
+           translateY(-5px)`;
+
+      });
+
+
+      card.addEventListener("mouseleave", () => {
+
+        card.style.transform =
+          "perspective(1000px) rotateX(0) rotateY(0)";
+
+      });
+
+    });
+
+
+  </script>
+
+</body>
+</html>
+```
